@@ -3,12 +3,8 @@
 #----------------------------------------------------------------------
 # Módulo encargado de realizar el análisis rfm a partir del fichero "sales_data_sample.csv"
 
-from pandas import DataFrame, to_datetime
+from pandas import DataFrame, qcut, to_datetime
 from datetime import timedelta
-from pandas import read_csv, DataFrame, qcut
-
-def get_dataset()->DataFrame:
-    return read_csv("../../../sales_data_sample.csv", encoding='ISO-8859-1')
 
 def rfm_features(dataset:DataFrame)->DataFrame:
     '''
@@ -49,4 +45,3 @@ def rfm_score_features(dataset:DataFrame)->DataFrame:
     rfm["M_score"] = rfm["M_score"].astype(int)
     rfm["RFM_score"] = rfm["R_score"] + rfm["F_score"] + rfm["M_score"]
     return rfm
-    pass
