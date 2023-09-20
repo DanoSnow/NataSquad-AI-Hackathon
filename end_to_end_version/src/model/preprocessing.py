@@ -34,4 +34,3 @@ def rfm_input(rfm_scored_dataset:DataFrame)->DataFrame:
                                    M_score=rfm_scored_dataset["M_score"],
                                    RFM_score=rfm_scored_dataset["RFM_score"])
     return rfm_scaled
-    pass
