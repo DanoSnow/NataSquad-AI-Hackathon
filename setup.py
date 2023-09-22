@@ -10,8 +10,8 @@ def get_requirements(file_path:str)->List[str]:
     return requirements
 
 setup(
-    name="End to end project",
-    version="0.1.0",
+    name="Customer segmentation",
+    version="0.1.1",
     author="Daniel Izaguirre",
     author_email="izaguirredaniel9712@gmail.com",
     packages=find_packages(),

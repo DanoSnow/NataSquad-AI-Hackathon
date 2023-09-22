@@ -19,7 +19,7 @@ def categorical_plot(clustered_dataset:DataFrame, plot_type:str='swarm'):
     if plot_type == 'swarm':
         sns.swarmplot(data=clustered_dataset, x='Labels', y='RFM_score',
                       hue='Labels', palette=sns.color_palette('hls', 4),
-                      dodge=False, legend=False)
+                      dodge=False, legend=False, s=3)
     elif plot_type == 'violin':
         sns.violinplot(data=clustered_dataset, x='Labels', y='RFM_score',
                        hue='Labels', palette=sns.color_palette('hls', 4),
@@ -34,6 +34,5 @@ def categorical_plot(clustered_dataset:DataFrame, plot_type:str='swarm'):
     else:
         raise ValueError("Invalid plot type. Allowed values are 'swarm', 'violin', or 'both'.")
 
-    fig_path = os.path.join('src/output/','categorical.jpg')
+    fig_path = os.path.join('src/output/','categorical.png')
     plt.savefig(fig_path)
-
