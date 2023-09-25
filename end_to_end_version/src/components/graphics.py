@@ -36,3 +36,4 @@ def categorical_plot(clustered_dataset:DataFrame, plot_type:str='swarm'):
 
     fig_path = os.path.join('src/output/','categorical.png')
     plt.savefig(fig_path)
+    plt.clf()
