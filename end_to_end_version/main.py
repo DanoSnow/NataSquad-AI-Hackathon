@@ -11,6 +11,7 @@ from src.model.k_means import predict
 import src.components.graphics as gr
 from fastapi import FastAPI, HTTPException, status
 from fastapi.responses import FileResponse
+from schemas.models import Sale
 
 ds = get_dataset()
 scored = rfm_score_features(ds)
@@ -36,3 +37,7 @@ async def plot(kind:str='swarm'):
     except ValueError as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
                             detail=str(e.args[0]))
+
+@app.post('/newsale')
+async def new_sale(sale: Sale):
+    return sale
